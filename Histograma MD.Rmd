@@ -1,0 +1,54 @@
+---
+title: "Histograma MD"
+author: "Selene Muñoz"
+date: "1/10/2021"
+output: html_document
+---
+
+Instalar paqueterías 
+
+install.packages("gapminder")
+
+install.packages("ggplot2")
+--
+
+Histogramas en R
+
+Cargar libreria ggplot2 y gapminder
+```{r}
+library(ggplot2)
+library(gapminder)
+```
+
+Cargar datos a entorno
+```{r}
+data("gapminder")
+```
+
+Filtrar por año 2007
+```{r}
+gapminder2007 <- gapminder[gapminder$year == '2007', ]
+```
+
+Hacer un histograma en ggplot2
+```{r}
+ggplot(data=gapminder2007,
+       mapping = aes(x=lifeExp))+
+  geom_histogram()
+```
+
+
+Hacer un histograma en ggplot2 con 9 intervalos (bins)
+```{r}
+ggplot(data=gapminder2007,
+       mapping = aes(x=lifeExp))+
+  geom_histogram(bins = 9)
+```
+
+Haciendo más cosas interesantes--color de acuerdo al continente
+```{r}
+ggplot(data=gapminder2007,
+       mapping = aes(x=lifeExp,
+                    fill=factor(continent)))+
+  geom_histogram(bins = 9)
+```
