@@ -3,9 +3,9 @@
 # Copiar todo esto #
 #                  #
 ####################
-# Hecho con gusto por Selene Muñoz ORtega (UAEH)
+# Hecho con gusto por Selene MuÃ±oz Ortega (UAEH)
 #V4
-# LABORATORIO - Gráficos en R con ggplot2 para Ciencia de Datos
+# LABORATORIO - GrÃ¡ficos en R con ggplot2 para Ciencia de Datos
 # Histogramas en R
 
 
@@ -24,7 +24,7 @@ library(gapminder)
 # cargando datos a entorno
 data("gapminder")
 
-# filtrando por año 2007
+# filtrando por aÃ±o 2007
 gapminder2007 <- gapminder[gapminder$year == '2007', ]
 
 
@@ -40,7 +40,7 @@ ggplot(data=gapminder2007,
   geom_histogram(bins = 9)
 
 
-# haciendo más cosas interesantes
+# haciendo mÃ¡s cosas interesantes
 ggplot(data=gapminder2007,
        mapping = aes(x=lifeExp,
                     fill=factor(continent)))+
